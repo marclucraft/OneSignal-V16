@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>OneSignal Web SDK v16</title>
+
+		<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+
+		<script>
+			const appId = '1a8f989a-a970-4b8e-be60-6669f8335fbb';
+			window.OneSignalDeferred = window.OneSignalDeferred || [];
+			OneSignalDeferred.push(function (OneSignal) {
+				OneSignal.init({
+					appId,
+				});
+			});
+		</script>
+
+		<style>
+			body {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				min-height: 100vh;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>OneSignal Web SDK v16</h1>
+		<script>
+			function logEvent(eventName, event) {
+				console.log(`${eventName}: ${JSON.stringify(event)}`);
+			}
+
+			OneSignalDeferred.push(function (OneSignal) {
+				OneSignal.Notifications.addEventListener('foregroundWillDisplay', event => logEvent('foregroundWillDisplay', event));
+				OneSignal.Notifications.addEventListener('dismiss', event => logEvent('dismiss', event));
+				OneSignal.Notifications.addEventListener('click', event => logEvent('click', event));
+				OneSignal.User.PushSubscription.addEventListener('change', event => {
+					if (event.current.optedIn) {
+						console.log('OneSignal Subscription ID (Player ID): ', event.current.id);
+						// If subscribed set an External Id
+						OneSignal.login('123456');
+					}
+				});
+				// Prompt the user to subscribe
+				OneSignal.Slidedown.promptPush();
+			});
+		</script>
+	</body>
+</html>
