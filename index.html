@@ -19,12 +19,30 @@
     <!-- OneSignal Initialisation -->
     <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
     <script>
+      var externalUserId = "55ed478e-91a2-46f4-b845-3c7450022462";
       window.OneSignalDeferred = window.OneSignalDeferred || [];
       OneSignalDeferred.push(function (OneSignal) {
         OneSignal.init({
           appId: "1a8f989a-a970-4b8e-be60-6669f8335fbb",
         });
       });
+
+      OneSignalDeferred.push(function () {
+        OneSignal.Slidedown.promptPush();
+      });
+
+      OneSignalDeferred.push((OneSignal) => {
+        // check on page load
+        handleExternalId();
+        // check on subscription changes
+        OneSignal.User.PushSubscription.addEventListener("change", handleExternalId);
+      });
+
+      //function to set external id or log that the user is not subscribed.
+      const handleExternalId = () => {
+        // check if subscribed. If they are, set the external_id
+        OneSignal.User.PushSubscription.optedIn ? OneSignal.login(externalUserId) : console.log("External ID not set: User not subscribed");
+      };
     </script>
 
     <style>
