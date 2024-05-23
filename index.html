@@ -164,8 +164,7 @@
     </div>
     <script>
       // Change the Notification Bell icon
-
-      document.addEventListener("DOMContentLoaded", () => {
+      function editBellIcon() {
         // Select the SVG element
         const svgElement = document.querySelector(".onesignal-bell-svg");
 
@@ -196,8 +195,15 @@
 
           // Append the new image to the SVG
           svgElement.appendChild(imgElement);
+
+          // Clear the interval once the SVG container is found and modified
+          clearInterval(checkExistence);
         }
-      });
+      }
+
+      // Check for the existence of the SVG container every 500 milliseconds
+      const checkExistence = setInterval(editBellIcon, 500);
+
     </script>
   </body>
 </html>
