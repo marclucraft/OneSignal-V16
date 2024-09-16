@@ -2,7 +2,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
 }
 
-/*** Styles to customise prompt ***/
+/*** Customise the OneSignal prompt ***/
 
 .slidedown-body-icon {
   display: none !important;
@@ -22,4 +22,10 @@ body {
   align-items: center !important;
   justify-content: center;
   flex-direction: row-reverse;
+}
+
+/*** Spacing for the Custom Link Container ***/
+
+.onesignal-customlink-container {
+  margin: 30px 0;
 }
