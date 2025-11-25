@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
-	"name": "OneSignal - V16 SDK & iOS Web Push",
-	"short_name": "OneSignal",
+	"name": "UnoSignal - V16 SDK & iOS Web Push",
+	"short_name": "UnoSignal",
 	"display": "standalone",
 	"description": "Add this WebApp to your iOS 16.4 homescreen, then open it to test Web Push!",
 	"icons": [
@@ -27,3 +27,4 @@
 		}
 	]
 }
+
