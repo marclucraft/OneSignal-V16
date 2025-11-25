@@ -1,0 +1,32 @@
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Web Push Notifications - V16 SDK</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png"/>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet"/> <!-- Manifest required for Web Push on iOS devices  -->
+  <link
+  rel="manifest" href="manifest.json"/>
+  <!-- OneSignal Initialisation -->
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer="defer"></script>
+  <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function (OneSignal) {
+      await OneSignal.init({appId: "03a500f9-c19c-4782-b9f4-e5f7becf201d"});
+    });
+    OneSignalDeferred.push(function (OneSignal) {
+      function eventListener(event) {
+        console.log(`${event}`);
+      }
+      OneSignal.Notifications.addEventListener("event", eventListener);
+    });
+  </script>
+</head>

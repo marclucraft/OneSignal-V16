@@ -1,0 +1,15 @@
+<!--Left Col-->
+<div class="flex flex-col w-full md:w-2/5 justify-start overflow-y-hidden">
+  <h1 class="mt-0 mb-4 text-3xl font-black md:text-5xl text-grey-950 text-center md:text-left">
+    {{ title }}
+  </h1>
+  <p class="text-center md:text-2xl md:text-left">
+    {{ paragraph }}
+  </p>
+  <div class="onesignal-customlink-container"></div>
+  
+  {% if pageContent %}
+    {{ pageContent | safe }}
+  {% endif %}
+</div>
+

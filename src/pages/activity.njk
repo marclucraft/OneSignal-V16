@@ -1,0 +1,35 @@
+---
+layout: base.njk
+title: "Activity Stats"
+paragraph: "Testing sharing stats from an In-App Message"
+permalink: activity.html
+---
+
+<div class="w-full mt-8">
+  <div class="stats-card max-w-md bg-white rounded-lg shadow-lg p-6">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Your Reading Activity</h1>
+    
+    <div class="stat-row flex justify-between items-center py-3 border-b border-gray-200">
+      <div class="stat-label text-gray-600 font-medium">Time spent reading:</div>
+      <div class="stat-value text-xl font-bold text-indigo-600" id="reading-time">--</div>
+    </div>
+    
+    <div class="stat-row flex justify-between items-center py-3">
+      <div class="stat-label text-gray-600 font-medium">Time spent listening:</div>
+      <div class="stat-value text-xl font-bold text-indigo-600" id="listening-time">--</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Parse query parameters from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  // Get the parameters (expecting 'reading' and 'listening')
+  const readingTime = urlParams.get('reading') || '--';
+  const listeningTime = urlParams.get('listening') || '--';
+  
+  // Update the page content
+  document.getElementById('reading-time').textContent = readingTime;
+  document.getElementById('listening-time').textContent = listeningTime;
+</script>

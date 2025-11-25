@@ -53,15 +53,43 @@
       <!--Left Col-->
 <div class="flex flex-col w-full md:w-2/5 justify-start overflow-y-hidden">
   <h1 class="mt-0 mb-4 text-3xl font-black md:text-5xl text-grey-950 text-center md:text-left">
-    Testing OneSignal Web Push Notifications
+    Activity Stats
   </h1>
   <p class="text-center md:text-2xl md:text-left">
-    This is a site used by Support to test OneSignal Web Push Notifications
+    Testing sharing stats from an In-App Message
   </p>
   <div class="onesignal-customlink-container"></div>
   
   
     
+<div class="w-full mt-8">
+  <div class="stats-card max-w-md bg-white rounded-lg shadow-lg p-6">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Your Reading Activity</h1>
+    
+    <div class="stat-row flex justify-between items-center py-3 border-b border-gray-200">
+      <div class="stat-label text-gray-600 font-medium">Time spent reading:</div>
+      <div class="stat-value text-xl font-bold text-indigo-600" id="reading-time">--</div>
+    </div>
+    
+    <div class="stat-row flex justify-between items-center py-3">
+      <div class="stat-label text-gray-600 font-medium">Time spent listening:</div>
+      <div class="stat-value text-xl font-bold text-indigo-600" id="listening-time">--</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Parse query parameters from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  // Get the parameters (expecting 'reading' and 'listening')
+  const readingTime = urlParams.get('reading') || '--';
+  const listeningTime = urlParams.get('listening') || '--';
+  
+  // Update the page content
+  document.getElementById('reading-time').textContent = readingTime;
+  document.getElementById('listening-time').textContent = listeningTime;
+</script>
 
   
 </div>

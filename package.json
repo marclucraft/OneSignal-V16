@@ -1,13 +1,14 @@
 {
+  "name": "onesignal-v16",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve --watch",
+    "dev": "eleventy --serve --watch",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "gulp": "^5.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-connect": "^5.7.0",
-    "gulp-file-include": "^2.3.0",
-    "gulp-hb": "^8.0.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-uglify": "^3.0.2"
+    "@11ty/eleventy": "^2.0.1",
+    "gh-pages": "^6.3.0"
   }
 }
