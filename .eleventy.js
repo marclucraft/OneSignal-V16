@@ -1,4 +1,7 @@
 module.exports = function(eleventyConfig) {
+  // Add year shortcode
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
   // Copy assets directory to output root (not preserving src/ structure)
   eleventyConfig.addPassthroughCopy({
     "src/assets": "assets"
