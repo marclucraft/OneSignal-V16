@@ -13,6 +13,7 @@ export function activity() {
 
   updatePage({
     title: 'Activity Stats',
+    pageTitle: 'Activity Stats',
     paragraph: 'Testing sharing stats from an In-App Message',
     content: `
       <div class="w-full mt-8">

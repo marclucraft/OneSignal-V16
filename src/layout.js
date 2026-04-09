@@ -61,7 +61,8 @@ export function initShell(app) {
  * Updates only the dynamic portions of the left column.
  * The shell (nav, bg, right col, OneSignal container) is untouched.
  */
-export function updatePage({ title, paragraph, content = '' }) {
+export function updatePage({ title, pageTitle = title, paragraph, content = '' }) {
+  document.title = `UnoSignal — ${pageTitle}`;
   document.getElementById('page-title').textContent = title;
   document.getElementById('page-paragraph').textContent = paragraph;
   document.getElementById('page-content').innerHTML = content;
