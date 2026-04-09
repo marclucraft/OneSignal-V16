@@ -2,13 +2,11 @@
   "name": "onesignal-v16",
   "version": "1.0.0",
   "scripts": {
-    "build": "eleventy",
-    "serve": "eleventy --serve --watch",
-    "dev": "eleventy --serve --watch",
-    "deploy": "npm run build && gh-pages -d dist"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "gh-pages": "^6.3.0"
+    "vite": "^6.0.0"
   }
 }
