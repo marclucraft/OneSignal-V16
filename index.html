@@ -1,100 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Web Push Notifications - V16 SDK</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png"/>
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png"/>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/OneSignal-V16/assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/OneSignal-V16/assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/OneSignal-V16/assets/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="/OneSignal-V16/manifest.json" />
+
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="assets/styles.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-  href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-    rel="stylesheet"/> <!-- Manifest required for Web Push on iOS devices  -->
-  <link
-  rel="manifest" href="manifest.json"/>
-  <!-- OneSignal Initialisation -->
-  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer="defer"></script>
-  <script>
-    window.OneSignalDeferred = window.OneSignalDeferred || [];
-    OneSignalDeferred.push(async function (OneSignal) {
-      await OneSignal.init({appId: "03a500f9-c19c-4782-b9f4-e5f7becf201d"});
-    });
-    OneSignalDeferred.push(function (OneSignal) {
-      function eventListener(event) {
-        console.log(`${event}`);
-      }
-      OneSignal.Notifications.addEventListener("event", eventListener);
-    });
-  </script>
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- dataLayer must be initialised before the GTM snippet -->
+  <script>window.dataLayer = window.dataLayer || [];</script>
+
+  <!-- Google Tag Manager — replace GTM-XXXXXXX with your container ID.
+       In GTM, load the OneSignal SDK and call OneSignal.init() using a
+       Custom HTML tag triggered on "Initialization - All Pages".
+       Use the virtualPageView custom event trigger for SPA page tracking. -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
+  <script type="module" crossorigin src="/OneSignal-V16/assets/index-Bf18mQnl.js"></script>
+  <link rel="stylesheet" crossorigin href="/OneSignal-V16/assets/index-JtvV_Hmc.css">
 </head>
-
 <body class="leading-normal tracking-normal text-gray-900 tracking-wider flex flex-col min-h-screen">
-  <div class="flex-1 flex flex-col bg-right bg-cover" style="background-image: url('assets/bg.svg')">
-    <!--Main-->
-    <div class="container pt-14 md:pt-28 px-6 mx-auto flex-1 flex flex-col">
-    
-    <!--Nav-->
-<div class="w-full container mx-auto py-6">
-  <div class="w-full flex items-center justify-between">
-    <a class="flex items-center" href="#">
-      <img src="assets/unosignal.png" class="w-100" />
-    </a>
-</div>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-
-
-    <div class="flex flex-col md:flex-row w-full mt-8 md:mt-12 flex-1">
-      
-      <!--Left Col-->
-<div class="flex flex-col w-full md:w-2/5 justify-start overflow-y-hidden">
-  <h1 class="mt-0 mb-4 text-3xl font-black md:text-5xl text-grey-950 text-center md:text-left">
-    OneSignal Web Push Notifications
-  </h1>
-  <p class="text-center md:text-2xl md:text-left">
-    This is a site used to test OneSignal Web Push Notifications
-  </p>
-  <div class="onesignal-customlink-container"></div>
-  
-  
-    
-
-  
-</div>
-
-
-      
-      <!--Right Col-->
-<div class="w-full md:w-3/5 py-6 overflow-y-hidden flex items-center justify-center">
-  <img class="w-5/6 mx-auto slide-in-bottom" src="assets/devices.svg" />
-</div>
-
-
-    </div>
-
-    </div>
-  </div>
-  
-  <!--Footer-->
-<footer class="w-full py-6 px-6 text-sm flex justify-between items-center bg-white bg-opacity-10">
-  <div class="container mx-auto flex justify-between items-center">
-    <div class="space-x-4">
-      <a href="index.html" class="text-gray-500 no-underline hover:no-underline">Home</a>
-      <a href="activity.html" class="text-gray-500 no-underline hover:no-underline">Activity</a>
-    </div>
-
-    <div class="text-gray-500">
-      <a class="no-underline hover:no-underline" href="#">&copy; UnoSignal 2026</a>
-    </div>
-  </div>
-</footer>
-
+  <div id="app"></div>
 
 </body>
-
 </html>
-
