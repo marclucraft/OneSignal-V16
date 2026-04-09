@@ -27,6 +27,13 @@ function render() {
     page: path,
     title: document.title,
   });
+
+  // TEMP: simulate a double-init with a mismatched App ID on every route change.
+  // Replicate a customer issue where GTM re-fires OneSignal.init() on SPA navigation.
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  window.OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({ appId: crypto.randomUUID() });
+  });
 }
 
 export function init() {
