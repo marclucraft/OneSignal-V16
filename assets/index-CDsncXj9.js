@@ -1,12 +1,12 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const n of t)if(n.type==="childList")for(const o of n.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function s(t){const n={};return t.integrity&&(n.integrity=t.integrity),t.referrerPolicy&&(n.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?n.credentials="include":t.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function a(t){if(t.ep)return;t.ep=!0;const n=s(t);fetch(t.href,n)}})();const r="/OneSignal-V16/";function u(e){e.innerHTML=`
-    <div class="flex-1 flex flex-col bg-right bg-cover" style="background-image: url('${r}assets/bg.svg')">
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const n of t)if(n.type==="childList")for(const l of n.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&a(l)}).observe(document,{childList:!0,subtree:!0});function s(t){const n={};return t.integrity&&(n.integrity=t.integrity),t.referrerPolicy&&(n.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?n.credentials="include":t.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function a(t){if(t.ep)return;t.ep=!0;const n=s(t);fetch(t.href,n)}})();const o="/OneSignal-V16/";function f(e){e.innerHTML=`
+    <div class="flex-1 flex flex-col bg-right bg-cover" style="background-image: url('${o}assets/bg.svg')">
       <div class="container pt-14 md:pt-28 px-6 mx-auto flex-1 flex flex-col">
 
         <!-- Nav -->
         <div class="w-full container mx-auto py-6">
           <div class="w-full flex items-center justify-between">
             <a class="flex items-center" href="#/">
-              <img src="${r}assets/unosignal.png" />
+              <img src="${o}assets/unosignal.png" />
             </a>
           </div>
         </div>
@@ -26,7 +26,7 @@
 
           <!-- Right column: persistent illustration -->
           <div class="w-full md:w-3/5 py-6 overflow-y-hidden flex items-center justify-center">
-            <img class="w-5/6 mx-auto slide-in-bottom" src="${r}assets/devices.svg" />
+            <img class="w-5/6 mx-auto slide-in-bottom" src="${o}assets/devices.svg" />
           </div>
 
         </div>
@@ -44,7 +44,7 @@
         </div>
       </div>
     </footer>
-  `}function d({title:e,pageTitle:i=e,paragraph:s,content:a=""}){document.title=`UnoSignal — ${i}`,document.getElementById("page-title").textContent=e,document.getElementById("page-paragraph").textContent=s,document.getElementById("page-content").innerHTML=a}const l=new Map;function f(e,i){l.set(e,i)}function g(){const e=window.location.hash;return!e||e==="#"?"/":e.replace(/^#/,"").split("?")[0]||"/"}function c(){const e=g(),i=l.get(e)??l.get("/");i&&i(),window.dataLayer=window.dataLayer||[],window.dataLayer.push({event:"virtualPageView",page:e,title:document.title}),window.OneSignalDeferred=window.OneSignalDeferred||[],window.OneSignalDeferred.push(async function(s){await s.init({appId:crypto.randomUUID()})})}function m(){window.addEventListener("hashchange",c),c()}function p(){d({title:"OneSignal Web Push Notifications",pageTitle:"Home",paragraph:"This is a site used to test OneSignal Web Push Notifications"})}function v(){const e=new URLSearchParams(window.location.search),i=window.location.hash.split("?")[1]??"",s=new URLSearchParams(i),a=e.get("reading")??s.get("reading")??"--",t=e.get("listening")??s.get("listening")??"--";d({title:"Activity Stats",pageTitle:"Activity Stats",paragraph:"Testing sharing stats from an In-App Message",content:`
+  `}function d({title:e,pageTitle:i=e,paragraph:s,content:a=""}){document.title=`UnoSignal — ${i}`,document.getElementById("page-title").textContent=e,document.getElementById("page-paragraph").textContent=s,document.getElementById("page-content").innerHTML=a}const r=new Map;function u(e,i){r.set(e,i)}function g(){const e=window.location.hash;return!e||e==="#"?"/":e.replace(/^#/,"").split("?")[0]||"/"}function c(){const e=g(),i=r.get(e)??r.get("/");i&&i(),window.dataLayer=window.dataLayer||[],window.dataLayer.push({event:"virtualPageView",page:e,title:document.title})}function m(){window.addEventListener("hashchange",c),c()}function p(){d({title:"OneSignal Web Push Notifications",pageTitle:"Home",paragraph:"This is a site used to test OneSignal Web Push Notifications"})}function v(){const e=new URLSearchParams(window.location.search),i=window.location.hash.split("?")[1]??"",s=new URLSearchParams(i),a=e.get("reading")??s.get("reading")??"--",t=e.get("listening")??s.get("listening")??"--";d({title:"Activity Stats",pageTitle:"Activity Stats",paragraph:"Testing sharing stats from an In-App Message",content:`
       <div class="w-full mt-8">
         <div class="stats-card max-w-md bg-white rounded-lg shadow-lg p-6">
           <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Your Reading Activity</h1>
@@ -58,4 +58,4 @@
           </div>
         </div>
       </div>
-    `})}u(document.getElementById("app"));f("/",p);f("/activity",v);m();
+    `})}f(document.getElementById("app"));u("/",p);u("/activity",v);m();
