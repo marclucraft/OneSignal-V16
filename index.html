@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,28 +17,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- dataLayer must be initialised before the GTM snippet -->
+    rel="stylesheet" />
   <script>window.dataLayer = window.dataLayer || [];</script>
 
-  <!-- Google Tag Manager-->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TKFTV6DZ');</script>
-  <!-- End Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TKFTV6DZ');</script>
 </head>
-<body class="leading-normal tracking-normal text-gray-900 tracking-wider flex flex-col min-h-screen">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKFTV6DZ"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
+<body class="leading-normal tracking-normal text-gray-900 tracking-wider flex flex-col min-h-screen">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKFTV6DZ" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <div id="app"></div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>
